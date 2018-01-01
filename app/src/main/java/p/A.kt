@@ -2,12 +2,21 @@ package p
 import android.graphics.Color.*
 import android.view.*
 import android.view.animation.*
-import kotlinx.android.synthetic.main.a.*
 import p.p.R
 class A:android.app.Activity(){val d=java.util.Random()
 val L=ArrayList<View>()
+fun t(s:Int)=android.util.TypedValue.applyDimension(1,s*1f,resources.displayMetrics).toInt()
 override fun onCreate(b:android.os.Bundle?){super.onCreate(b)
-setContentView(R.layout.a)
+val c=android.widget.FrameLayout(this)
+val q=android.widget.LinearLayout(this)
+q.orientation=1
+c.addView(q,ViewGroup.LayoutParams(-1,-1))
+val p=View(this)
+val j=android.graphics.drawable.ShapeDrawable(android.graphics.drawable.shapes.OvalShape())
+j.paint.color=-0xeeee78
+p.background=j
+c.addView(p,ViewGroup.LayoutParams(t(20),t(20)))
+setContentView(c,ViewGroup.LayoutParams(-1,-1))
 for(i in 0..60){val v=LayoutInflater.from(this).inflate(R.layout.d,q,false)as ViewGroup
 val l=v.getChildAt(0)
 val r=v.getChildAt(2)
@@ -23,9 +32,10 @@ a.repeatMode=2
 a.duration=2000
 a.currentPlayTime=i*100L
 a.start()}
-u()}fun u(){val P=2
+fun u(){val P=2
 val a=TranslateAnimation(P,2f,P,-.5f,P,d.nextFloat(),P,d.nextFloat())
 a.duration=2000
 p.startAnimation(a)
 p.postDelayed({u()
-if(L.size>0)L.removeAt(d.nextInt(L.size)).visibility=4},2000)}}
+if(L.size>0)L.removeAt(d.nextInt(L.size)).visibility=4},2000)}
+u()}}
