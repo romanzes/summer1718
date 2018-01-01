@@ -10,13 +10,14 @@ override fun onCreate(b:android.os.Bundle?){super.onCreate(b)
 val c=android.widget.FrameLayout(this)
 val q=android.widget.LinearLayout(this)
 q.orientation=1
-c.addView(q,ViewGroup.LayoutParams(-1,-1))
+fun y(i:Int,j:Int)=ViewGroup.LayoutParams(i,j)
+c.addView(q,y(-1,-1))
 val p=View(this)
 val j=android.graphics.drawable.ShapeDrawable(android.graphics.drawable.shapes.OvalShape())
 j.paint.color=-0xeeee78
 p.background=j
-c.addView(p,ViewGroup.LayoutParams(t(20),t(20)))
-setContentView(c,ViewGroup.LayoutParams(-1,-1))
+c.addView(p,y(t(20),t(20)))
+setContentView(c,y(-1,-1))
 for(i in 0..60){val v=LayoutInflater.from(this).inflate(R.layout.d,q,false)as ViewGroup
 val l=v.getChildAt(0)
 val r=v.getChildAt(2)
