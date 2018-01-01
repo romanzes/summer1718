@@ -10,16 +10,9 @@
         android:gravity="center"
         android:orientation="vertical" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <View
-            android:id="@+id/p"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:background="@drawable/photon"
-            android:orientation="vertical" />
-    </RelativeLayout>
+    <View
+        android:id="@+id/p"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/photon" />
 </FrameLayout>
