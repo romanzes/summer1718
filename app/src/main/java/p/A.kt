@@ -3,10 +3,12 @@ import android.graphics.Color.*
 import android.graphics.drawable.GradientDrawable
 import android.view.*
 import android.view.animation.*
-class A:android.app.Activity(){val d=java.util.Random()
+class A:android.app.Activity(){
+val d=java.util.Random()
 val L=ArrayList<View>()
 fun t(s:Int)=android.util.TypedValue.applyDimension(1,s*1f,resources.displayMetrics).toInt()
-override fun onCreate(b:android.os.Bundle?){super.onCreate(b)
+override fun onCreate(b:android.os.Bundle?){
+super.onCreate(b)
 val c=android.widget.FrameLayout(this)
 fun b()=android.widget.LinearLayout(this)
 val q=b()
@@ -23,7 +25,8 @@ c.addView(p,y(t(20),t(20)))
 setContentView(c,y(-1,-1))
 val t=android.util.DisplayMetrics()
 windowManager.defaultDisplay.getMetrics(t)
-for(i in 0..t.heightPixels/t(10)){val v=b()
+for(i in 0..t.heightPixels/t(10)){
+val v=b()
 v.gravity=17
 val l=v()
 val m=v()
@@ -38,16 +41,25 @@ r.setBackgroundColor(argb(255,b(),b(),b()))
 q.addView(v,y(t(120),-2))
 L.addAll(listOf(l,m,r))
 val a=android.animation.ValueAnimator.ofFloat(1f,-1f)
-a.addUpdateListener{v.scaleX=it.animatedValue as Float}
+a.addUpdateListener{
+v.scaleX=it.animatedValue as Float
+}
 a.repeatCount=-1
 a.repeatMode=2
 a.duration=2000
 a.currentPlayTime=i*100L
-a.start()}
-fun u(){val P=2
+a.start()
+}
+fun u(){
+val P=2
 val a=TranslateAnimation(P,2f,P,-.5f,P,d.nextFloat(),P,d.nextFloat())
 a.duration=2000
 p.startAnimation(a)
-p.postDelayed({u()
-if(L.size>0)L.removeAt(d.nextInt(L.size)).visibility=4},2000)}
-u()}}
+p.postDelayed({
+u()
+if(L.size>0)L.removeAt(d.nextInt(L.size)).visibility=4
+},2000)
+}
+u()
+}
+}
